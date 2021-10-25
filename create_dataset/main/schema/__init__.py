@@ -1,1 +1,1 @@
-from create_dataset.main.schema.schema import Document
+from create_dataset.main.schema.document import Document

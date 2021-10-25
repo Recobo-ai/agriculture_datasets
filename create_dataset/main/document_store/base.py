@@ -14,4 +14,17 @@ class BaseDocumentStore(ABC):
 
     @abstractmethod
     def write_documents(self, documents: Union[List[dict], List[Document]], index: Optional[str] = None):
+        """Method to write documents to document store
+
+        Args:
+            documents (Union[List[dict], List[Document]]): documents to ingest in Document class format
+            index (Optional[str], optional): index for document store. Defaults to None.
+        """
+        pass
+    
+    @abstractmethod
+    def get_all_documents(self, print_val = False):
+        """
+        Method to retrieve all documents from document store
+        """
         pass

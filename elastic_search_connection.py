@@ -2,7 +2,6 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import parallel_bulk
 from create_dataset.main import document_store
 from create_dataset.main.schema import Document
-from datetime import datetime
 
 def connect(index, create = False):
 
@@ -52,14 +51,14 @@ def test_connection():
     get_all_documents(client=client, index=index)
     
 def test_document_store():
-    index = "test_es"
+    index = "test_es1"
     create = False
     text_list = ["test3", "text4"]
-    documents_objects = [Document(text=x, meta={'some_key':'value'}) for x in text_list]
+    documents_objects = [Document(text=x, meta={'some_key':'value', 'another_key':'value1'}) for x in text_list]
     from create_dataset.main.document_store import ElasticsearchDocumentStore
     document_store = ElasticsearchDocumentStore(index=index, create_index=create)
     document_store.write_documents(documents=documents_objects)
     res = document_store.get_all_documents(print_val=True)
-    print(res)
+    print(f"output: {res}")
     
 test_document_store()

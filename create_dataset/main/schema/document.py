@@ -15,12 +15,15 @@ class Document:
 
         self.meta = meta
 
-    def to_dict(self, field_map={}):
+    def to_dict(self, field_map={'text', 'meta'}):
         inv_field_map = {v: k for k, v in field_map.items()}
+        print(f"inv_field_map: {inv_field_map}")
         _doc: Dict[str, str] = {}
         for k, v in self.__dict__.items():
+            print(f"{k}, {v}")
             k = k if k not in inv_field_map else inv_field_map[k]
             _doc[k] = v
+        print(f"final: {_doc}")
         return _doc
 
     def __str__(self):

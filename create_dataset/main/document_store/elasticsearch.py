@@ -2,7 +2,6 @@ import logging
 from create_dataset.main.schema import Document
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import parallel_bulk
-from create_dataset.main.schema import Document
 from create_dataset.main.document_store import BaseDocumentStore
 from typing import List
 
