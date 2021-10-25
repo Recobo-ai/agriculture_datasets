@@ -1,4 +1,4 @@
-# # Agriculture Datasets Creation for downstream fine-tuning tasks
+# Agriculture Datasets Creation for downstream fine-tuning tasks
 
 # Document Store for your data
 
