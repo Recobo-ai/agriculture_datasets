@@ -38,9 +38,9 @@ def ingest(client, index, text_list):
 def get_all_documents(client, index):
     body = {"query": {"match_all": {}}}
     res = client.search(index=index, body=body)
-    print("Got %d Hits:" % res['hits']['total']['value'])
-    for hit in res['hits']['hits']:
-        print(f"{hit['_source']}")
+    # print("Got %d Hits:" % res['hits']['total']['value'])
+    # for hit in res['hits']['hits']:
+    #     print(f"{hit['_source']}")
         
 def test_connection():
     index = "test_es"
