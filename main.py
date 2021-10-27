@@ -4,10 +4,6 @@ import os
 
 if __name__ == "__main__":
     index = 'test_es2'
-    os.environ['deepL_URL'] = "https://api.deepl.com/v2/translate"
-    os.environ['deepL_key'] = "9ec373ea-8d76-c497-6a91-e3437eabfe67"
-    os.environ['google_URL'] = 'xxx'
-    os.environ['google_key'] = 'xxx'
     
     # create a document store
     document_store = ElasticsearchDocumentStore(index=index, create_index=False)
